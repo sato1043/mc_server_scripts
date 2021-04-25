@@ -1,0 +1,34 @@
+---
+type: EventFilter
+api_version: core/v2
+metadata:
+  name: contact_ops
+spec:
+  action: allow
+  runtime_assets:
+    - contact-filter
+  expressions:
+    - has_contact(event, "ops")
+---
+type: EventFilter
+api_version: core/v2
+metadata:
+  name: contact_dev
+spec:
+  action: allow
+  runtime_assets:
+    - contact-filter
+  expressions:
+    - has_contact(event, "dev")
+---
+type: EventFilter
+api_version: core/v2
+metadata:
+  name: contact_fallback
+spec:
+  action: allow
+  runtime_assets:
+    - contact-filter
+  expressions:
+    - no_contacts(event)
+

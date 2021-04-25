@@ -1,0 +1,4 @@
+# m h  dom mon dow   command
+27 * * * * /home/mc/rotateLogs.sh
+30 12 * * * /home/mc/backupFull.sh
+30 9-11,13-19/1 * * * /home/mc/backupMaps.sh

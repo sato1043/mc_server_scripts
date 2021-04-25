@@ -1,0 +1,64 @@
+---
+type: Handler
+api_version: core/v2
+metadata:
+  name: slack_fallback
+spec:
+  command: sensu-slack-handler --channel "#minecraft-server-monitoring"
+  env_vars:
+  - SLACK_WEBHOOK_URL=https://hooks.slack.com/services/aaa/bbb
+  filters:
+  - is_incident
+  - not_silenced
+  - fatigue_check
+  - contact_fallback
+  runtime_assets:
+  - sensu-slack-handler
+  type: pipe
+---
+type: Handler
+api_version: core/v2
+metadata:
+  name: slack_ops
+spec:
+  command: sensu-slack-handler --channel "#minecraft-server-ops"
+  env_vars:
+  - SLACK_WEBHOOK_URL=https://hooks.slack.com/services/aaa/bbb
+  filters:
+  - is_incident
+  - not_silenced
+  - fatigue_check
+  - contact_ops
+  runtime_assets:
+  - sensu-slack-handler
+  type: pipe
+---
+type: Handler
+api_version: core/v2
+metadata:
+  name: slack_dev
+spec:
+  command: sensu-slack-handler --channel "#minecraft-server-dev"
+  env_vars:
+  - SLACK_WEBHOOK_URL=https://hooks.slack.com/services/aaa/bbb
+  filters:
+  - is_incident
+  - not_silenced
+  - fatigue_check
+  - contact_dev
+  runtime_assets:
+  - sensu-slack-handler
+  type: pipe
+---
+type: Handler
+api_version: core/v2
+metadata:
+  name: slack
+  namespace: default
+spec:
+  handlers:
+  - slack_ops
+  - slack_dev
+  - slack_fallback
+  type: set
+

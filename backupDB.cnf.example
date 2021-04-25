@@ -1,0 +1,4 @@
+[client]
+user = <DBUSERNAME>
+password = <DBUSERPASS>
+host = 127.0.0.1

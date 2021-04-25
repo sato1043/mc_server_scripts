@@ -1,0 +1,6 @@
+.*
+backupDB.cnf
+__full_backups/*.tgz
+__maps_backups/*.tgz
+rEFind
+server
