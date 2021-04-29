@@ -1,6 +1,6 @@
 #! /bin/bash
 
-. ./settings.sh
+source ./settings.sh
 
 MYSQL="mysql --defaults-extra-file=backupDB.cnf"
 

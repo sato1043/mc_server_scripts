@@ -1,0 +1,20 @@
+[Unit]
+Description=Minecraft Server
+Requires=network.target network-online.target mysql.service
+After=network.target network-online.target mysql.service
+
+[Service]
+Type=forking
+User=mc
+WorkingDirectory=/home/mc
+ExecStart=/home/mc/start.sh
+ExecStop=/home/mc/stop.sh
+ExecReload=/home/mc/restart.sh
+Restart=always
+StartLimitInterval=300
+StartLimitBurst=3
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ./settings.sh
+source ./settings.sh
 
 if pgrep -u $USERNAME -f $SERVICE > /dev/null
 then

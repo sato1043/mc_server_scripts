@@ -1,6 +1,6 @@
 #! /bin/bash
 
-. ./settings.sh
+source ./settings.sh
 
 cd $SH_PATH
 

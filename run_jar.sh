@@ -1,6 +1,6 @@
 #! /bin/bash -e
 
-. ./settings.sh
+source ./settings.sh
 
 ./cpucores.sh
 

@@ -1,6 +1,6 @@
 #! /bin/bash
 
-. ./settings.sh
+source ./settings.sh
 
 CHK_GEN=$(ls -1 $LOGS_TGT_FILE | wc -l)
 DEL_LIST=$(ls -1 -t ${LOGS_TGT_FILE} | tail -n ${LOGS_TAIL_GEN})

@@ -1,6 +1,6 @@
 #! /bin/bash
 
-. ./settings.sh
+source ./settings.sh
 
 WILL_RESTART=
 if pgrep -u $USERNAME -f $SERVICE > /dev/null
